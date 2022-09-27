@@ -22,14 +22,30 @@
     <!-- <meta name="theme-color" content="#bae6fd" /> -->
 </head>
 
-<body class="h-full mx-12 mt-12 bg-gray-200" x-data="{ show: false }">
-    <button @click="show =! show">Click</button>
+<body x-data="{
+        show: 'button',
+        next() {
+            const states = ['button', 'image', 'text']
+            let currentIndex = states.findIndex(state => state === this.show)
+            if (currentIndex === states.length - 1) currentIndex = -1
+            this.show = states[currentIndex + 1]
+        }
+    }">
+    <canvas class="relative w-screen h-screen bg-gray-300" id="canvas" @click="next()"></canvas>
+    <div class="absolute inset-0 z-10 text-white pointer-events-none">
+        <div class="flex items-center justify-center h-full">
+            <div x-cloak x-show="show === 'image'" x-transition:enter="transition ease-out duration-[2500ms]"
+                x-transition:enter-start="opacity-0 scale-75" x-transition:enter-end="opacity-100 scale-100"
+                class="w-2/3 bg-red-300 rounded aspect-square"></div>
+            <div x-cloak x-show="show === 'text'" x-transition:enter="transition ease-out duration-[2500ms]"
+                x-transition:enter-start="opacity-0 scale-75" x-transition:enter-end="opacity-100 scale-100"
+                class="w-2/3 bg-blue-300 rounded aspect-square"></div>
+            <button x-show="show === 'button'">Click</button>
+        </div>
 
-    <div class="p-4 bg-white rounded" x-show="show">
-        Hello world
-    </div>
-
-    <script type="module" src="/index.js"></script>
+        <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+        <script type="module" src="/index.js"></script>
+        <script type="module" src="/sparkle.js"></script>
 </body>
 
 </html>
