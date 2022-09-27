@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Herzlich Willkommen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- todo -->
+    <meta property="og:title" content="Weihnachten 2021" />
+    <meta property="og:description" content="Liebe Grüße von Familie Bär." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://xmas-2021.maltebaer.vercel.app/" />
+    <meta property="og:image" content="https://xmas-2021.maltebaer.vercel.app/images/preview.png" />
+
+    <!-- todo -->
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+
+    <link rel="stylesheet" href="/tailwind.css" />
+
+    <!-- <meta name="theme-color" content="#bae6fd" /> -->
+</head>
+
+<body class="h-full mx-12 mt-12 bg-gray-200" x-data="{ show: false }">
+    <button @click="show =! show">Click</button>
+
+    <div class="p-4 bg-white rounded" x-show="show">
+        Hello world
+    </div>
+
+    <script type="module" src="/index.js"></script>
+</body>
+
+</html>
