@@ -14,9 +14,8 @@ function init() {
     stage = new createjs.StageGL(canvas, {
         preserveBuffer: true,
         antialias: true,
+        transparent: true,
     });
-    stage.autoClear = false;
-    stage.setClearColor(0x000000);
 
     // attach mouse handlers directly to the source canvas.
     // better than calling from canvas tag for cross browser compatibility:
@@ -63,7 +62,7 @@ function imageLoaded() {
     fader = new createjs.Shape();
     stage.addChild(fader);
     var gfx = fader.graphics;
-    gfx.beginFill("rgba(0,0,0, 0.3)").drawRect(0, 0, 1024, 704).endFill();
+    gfx.beginFill("rgba(255,255,255, 0)").drawRect(0, 0, 1024, 704).endFill();
     fader.cache(0, 0, 1024, 1024, 1 / 32); // Power of two textures smooth better, but we don't need full resolution either
     spkls = new createjs.Container();
     stage.addChild(spkls);
