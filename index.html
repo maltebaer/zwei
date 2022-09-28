@@ -36,14 +36,14 @@
         }
     }" x-init="
         setTimeout(() => next(), 5)
-        setTimeout(() => next(), 5950)
+        setTimeout(() => next(), 5550)
     ">
     <canvas class="relative w-screen h-screen bg-gray-300 bg-[url('./images/universe.jpg')] bg-cover bg-center"
         id="canvas" @click="next()"></canvas>
 
     <div class="absolute inset-0 z-10 text-white pointer-events-none">
         <div class="flex items-center justify-center h-full">
-            <div x-show="show === 'hugo'" x-transition:enter="transition ease-in duration-[2500ms] delay-[3500ms]"
+            <div x-show="show === 'hugo'" x-transition:enter="transition ease-in-out duration-[2000ms] delay-[3500ms]"
                 x-transition:enter-start="opacity-100 scale-75 rotate-0"
                 x-transition:enter-end="opacity-0 scale-0 rotate-[-720deg]">
                 <img src="./images/hugo.gif" alt="hugo">
