@@ -27,20 +27,32 @@
 </head>
 
 <body x-data="{
-        show: 'button',
+        show: '',
         next() {
-            const states = ['button', 'baby', 'text', 'family']
+            const states = ['hugo', 'button', 'baby', 'text', 'family']
             let currentIndex = states.findIndex(state => state === this.show)
             if (currentIndex === states.length - 1) currentIndex = -1
             this.show = states[currentIndex + 1]
         }
-    }">
+    }" x-init="
+        setTimeout(() => next(), 5)
+        setTimeout(() => next(), 3950)
+    ">
     <canvas class="relative w-screen h-screen bg-gray-300 bg-[url('./images/universe.jpg')] bg-cover bg-center"
         id="canvas" @click="next()"></canvas>
 
     <div class="absolute inset-0 z-10 text-white pointer-events-none">
         <div class="flex items-center justify-center h-full">
-            <button x-show="show === 'button'">Klick</button>
+            <div x-show="show === 'hugo'" x-transition:enter="transition ease-in duration-[2500ms] delay-[1500ms]"
+                x-transition:enter-start="opacity-100 scale-75 rotate-0"
+                x-transition:enter-end="opacity-0 scale-0 rotate-[360deg]">
+                <img src="./images/hugo.gif" alt="hugo">
+            </div>
+
+            <button x-show="show === 'button'" x-transition:enter="transition ease-out duration-500"
+                x-transition:enter-start="opacity-0 scale-75" x-transition:enter-end="opacity-100 scale-100">
+                Klick
+            </button>
 
             <div x-cloak x-show="show === 'baby'" x-transition:enter="transition ease-out duration-[2500ms]"
                 x-transition:enter-start="opacity-0 scale-75" x-transition:enter-end="opacity-100 scale-100"
