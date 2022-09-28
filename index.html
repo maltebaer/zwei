@@ -38,7 +38,8 @@
         setTimeout(() => next(), 5)
         setTimeout(() => next(), 5550)
     ">
-    <canvas class="relative w-screen h-screen bg-gray-300 bg-[url('./images/universe.jpg')] bg-contain bg-center"
+    <canvas
+        class="cursor-pointer relative w-screen h-screen bg-gray-300 bg-[url('./images/universe.jpg')] bg-contain bg-center"
         id="canvas" @click="next()"></canvas>
 
     <div class="absolute inset-0 z-10 text-white pointer-events-none">
@@ -56,10 +57,10 @@
 
             <div x-cloak x-show="show === 'baby'" x-transition:enter="transition ease-out duration-[2500ms]"
                 x-transition:enter-start="opacity-0 scale-75" x-transition:enter-end="opacity-100 scale-100"
-                class="m-2">
+                class="m-12">
                 <img class="p-2 bg-white" src="./images/baby.jpg" alt="baby">
 
-                <div class="mt-2 text-center">Klick</div>
+                <button class="w-full mt-2 text-center">Klick</button>
             </div>
 
             <div x-cloak x-show="show === 'text'" x-transition:enter="transition ease-out duration-[2500ms]"
@@ -79,15 +80,15 @@
                     </div>
                 </div>
 
-                <div class="mt-2 text-center">Klick</div>
+                <button class="w-full mt-2 text-center">Klick</button>
             </div>
 
             <div x-cloak x-show="show === 'family'" x-transition:enter="transition ease-out duration-[2500ms]"
                 x-transition:enter-start="opacity-0 scale-75" x-transition:enter-end="opacity-100 scale-100"
-                class="m-2">
+                class="m-12">
                 <img class="p-2 bg-white" src="./images/family.jpg" alt="family">
 
-                <div class="mt-2 text-center">Klick</div>
+                <button class="w-full mt-2 text-center">Klick</button>
             </div>
         </div>
     </div>
