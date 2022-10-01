@@ -3,19 +3,8 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Herzlich Willkommen</title>
+    <title>Herzlich Willkommen!</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <!-- todo -->
-    <meta property="og:title" content="Weihnachten 2021" />
-    <meta property="og:description" content="Liebe Grüße von Familie Bär." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://xmas-2021.maltebaer.vercel.app/" />
-    <meta property="og:image" content="https://xmas-2021.maltebaer.vercel.app/images/preview.png" />
-
-    <!-- todo -->
-    <link rel="icon" href="/favicon.ico" sizes="any" />
-    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
 
     <link rel="stylesheet" href="/tailwind.css" />
 
@@ -29,7 +18,7 @@
 <body x-data="{
         show: '',
         next() {
-            const states = ['hugo', 'button', 'baby', 'text', 'family']
+            const states = ['hugo', 'button', 'milla', 'text', 'family']
             let currentIndex = states.findIndex(state => state === this.show)
             if (currentIndex === states.length - 1) currentIndex = -1
             this.show = states[currentIndex + 1]
@@ -55,10 +44,10 @@
                 Klick
             </button>
 
-            <div x-cloak x-show="show === 'baby'" x-transition:enter="transition ease-out duration-[2500ms]"
+            <div x-cloak x-show="show === 'milla'" x-transition:enter="transition ease-out duration-[2500ms]"
                 x-transition:enter-start="opacity-0 scale-75" x-transition:enter-end="opacity-100 scale-100"
                 class="m-12">
-                <img class="p-2 bg-white" src="./images/baby.jpg" alt="baby">
+                <img class="p-2 bg-white max-h-[800px]" src="./images/milla.jpg" alt="milla">
 
                 <button class="w-full mt-2 text-center">Klick</button>
             </div>
@@ -69,13 +58,19 @@
                 <div class="p-2 bg-white aspect-[2/3]">
                     <div class="flex items-center justify-center h-full p-8 bg-teal-900">
                         <div>
-                            <h1 class="mb-1 text-2xl font-semibold">Michel Lovis Bär</h1>
-                            <div class="mb-12 font-light">01. Juni 2020</div>
-                            <ul class="space-y-1 font-light text-right">
-                                <li>08:36 Uhr</li>
-                                <li>51 cm</li>
-                                <li>3560 g</li>
-                            </ul>
+                            <h1 class="mb-1 text-2xl font-semibold">Milla Skadi Bär</h1>
+                            <div class="mb-12 font-light">01. Oktober 2022</div>
+                            <div class="max-w-sm text-sm font-light text-right">
+                                <div class="mb-1">
+                                    Letzte Nacht, am 01. Oktober um 01:14 Uhr, kam unsere Tochter Milla Skadi friedlich
+                                    und
+                                    in Windeseile bei uns Zuhause zur Welt.
+                                </div>
+                                <div>
+                                    Sie ist 51 cm groß und wiegt 3400 g. Die ganze Familie ist wohlauf und mächtig
+                                    stolz.
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -86,7 +81,7 @@
             <div x-cloak x-show="show === 'family'" x-transition:enter="transition ease-out duration-[2500ms]"
                 x-transition:enter-start="opacity-0 scale-75" x-transition:enter-end="opacity-100 scale-100"
                 class="m-12">
-                <img class="p-2 bg-white" src="./images/family.jpg" alt="family">
+                <img class="p-2 bg-white max-h-[800px]" src="./images/family.jpg" alt="family">
 
                 <button class="w-full mt-2 text-center">Klick</button>
             </div>
